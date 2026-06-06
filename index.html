@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gus &amp; Kay · 14.11.2026</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Gus &amp; Kay · 14.11.2026" />
+  <meta property="og:description" content="Nos casamos el 14 de noviembre de 2026 en la Hacienda de Chiapa, Colima" />
+  <meta property="og:image"       content="/images/hero-hacienda.jpg" />
+  <meta property="og:type"        content="website" />
+
+  <!-- SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232c2420' rx='8'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='16' fill='%23fcf2e6'%3EG%26K%3C/text%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-light':       '#fcf2e6',
+            'bg-dark':        '#2c2420',
+            'terracota':      '#894431',
+            'terracota-soft': '#c78272',
+            'gold':           '#8B6914',
+          },
+          fontFamily: {
+            display: ['Cardo', 'serif'],
+            body:    ['Cardo', 'serif'],
+            script:  ['Great Vibes', 'cursive'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+
+<!-- ════════════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════════════ -->
+<nav id="navbar" class="transparent">
+  <div class="nav-inner">
+    <!-- Desktop menu links -->
+    <ul class="nav-links hidden sm:flex items-center gap-5 list-none m-0 p-0">
+      <li><a href="#ceremonia" class="nav-link lang-es">Ceremonia</a><a href="#ceremonia" class="nav-link lang-en">Ceremony</a></li>
+      <li><a href="#recepcion" class="nav-link lang-es">Recepción</a><a href="#recepcion" class="nav-link lang-en">Reception</a></li>
+      <li><a href="#nosotros" class="nav-link lang-es">Nosotros</a><a href="#nosotros" class="nav-link lang-en">Us</a></li>
+      <li><a href="#viaje" class="nav-link lang-es">Viaje</a><a href="#viaje" class="nav-link lang-en">Travel</a></li>
+      <li><a href="#regalos" class="nav-link lang-es">Regalos</a><a href="#regalos" class="nav-link lang-en">Gifts</a></li>
+      <li><a href="#faq" class="nav-link">FAQ</a></li>
+    </ul>
+    <!-- Spacer pushes right-side items to the edge on mobile -->
+    <div class="flex-1"></div>
+    <!-- Language toggle (shared between desktop + mobile, cloned into overlay via JS) -->
+    <button class="lang-toggle" aria-label="Toggle language">
+      <span class="lang-indicator"></span>
+      <span class="lang-opt" data-lang="es">ES</span>
+      <span class="lang-opt" data-lang="en">EN</span>
+    </button>
+    <!-- Hamburger — mobile only -->
+    <button id="hamburger-btn" class="sm:hidden hamburger-btn ml-3" aria-label="Open menu" aria-expanded="false">
+      <span class="bar bar-top"></span>
+      <span class="bar bar-middle"></span>
+      <span class="bar bar-bottom"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════
+     MOBILE MENU OVERLAY
+════════════════════════════════════════════════════════════ -->
+<div id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+  <button id="mobile-close-btn" aria-label="Close menu">&#215;</button>
+
+  <nav class="flex flex-col items-center">
+    <a href="#ceremonia" class="mobile-nav-link lang-es">Ceremonia</a>
+    <a href="#ceremonia" class="mobile-nav-link lang-en">Ceremony</a>
+    <a href="#recepcion" class="mobile-nav-link lang-es">Recepción</a>
+    <a href="#recepcion" class="mobile-nav-link lang-en">Reception</a>
+    <a href="#nosotros"  class="mobile-nav-link lang-es">Nosotros</a>
+    <a href="#nosotros"  class="mobile-nav-link lang-en">Us</a>
+    <a href="#viaje"     class="mobile-nav-link lang-es">Viaje</a>
+    <a href="#viaje"     class="mobile-nav-link lang-en">Travel</a>
+    <a href="#regalos"   class="mobile-nav-link lang-es">Regalos</a>
+    <a href="#regalos"   class="mobile-nav-link lang-en">Gifts</a>
+    <a href="#faq"       class="mobile-nav-link">FAQ</a>
+  </nav>
+
+  <!-- Language toggle inside overlay -->
+  <button class="lang-toggle" aria-label="Toggle language">
+    <span class="lang-indicator"></span>
+    <span class="lang-opt" data-lang="es">ES</span>
+    <span class="lang-opt" data-lang="en">EN</span>
+  </button>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     1. HERO  — Style A (light)
+════════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <!-- Background photo -->
+  <img id="hero-bg" src="images/hero-hacienda.jpg" alt="" aria-hidden="true" />
+
+  <!-- Intro video -->
+  <video id="hero-video" autoplay muted playsinline preload="auto" aria-hidden="true">
+    <source src="images/animation-hero.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Hero text -->
+  <div id="hero-content" class="text-center px-6 max-w-xl mx-auto">
+    <!-- ES -->
+    <p class="lang-es section-eyebrow text-terracota mb-4 tracking-widest">14 · 11 · 2026</p>
+    <h1 class="lang-es font-script text-6xl sm:text-7xl md:text-8xl text-bg-dark leading-tight mb-4">
+      ¡Nos casamos!
+    </h1>
+    <p class="lang-es font-display text-xl sm:text-2xl text-bg-dark mb-6">
+      Gus y Kay te invitan a celebrar
+    </p>
+    <!-- EN -->
+    <p class="lang-en section-eyebrow text-terracota mb-4 tracking-widest">November 14 · 2026</p>
+    <h1 class="lang-en font-script text-6xl sm:text-7xl md:text-8xl text-bg-dark leading-tight mb-4">
+      We're getting married!
+    </h1>
+    <p class="lang-en font-display text-xl sm:text-2xl text-bg-dark mb-6">
+      Gus and Kay invite you to celebrate
+    </p>
+
+    <!-- Shared -->
+    <p class="font-display font-bold text-lg text-bg-dark opacity-80">
+      Hacienda de Chiapa, Colima
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     2. COUNTDOWN  — Style B (dark)
+════════════════════════════════════════════════════════════ -->
+<section class="section-dark py-20 px-6">
+  <div class="max-w-xl mx-auto text-center">
+    <p class="lang-es section-eyebrow text-terracota-soft tracking-widest mb-3">Faltan</p>
+    <p class="lang-en section-eyebrow text-terracota-soft tracking-widest mb-3">Counting down</p>
+
+    <div class="flex justify-center gap-4 sm:gap-8">
+      <!-- Days -->
+      <div class="countdown-box">
+        <span id="cd-days" class="countdown-number">––</span>
+        <span class="countdown-label lang-es">Días</span>
+        <span class="countdown-label lang-en">Days</span>
+      </div>
+      <!-- Hours -->
+      <div class="countdown-box">
+        <span id="cd-hours" class="countdown-number">––</span>
+        <span class="countdown-label lang-es">Horas</span>
+        <span class="countdown-label lang-en">Hours</span>
+      </div>
+      <!-- Minutes -->
+      <div class="countdown-box">
+        <span id="cd-minutes" class="countdown-number">––</span>
+        <span class="countdown-label lang-es">Minutos</span>
+        <span class="countdown-label lang-en">Minutes</span>
+      </div>
+    </div>
+
+    <p class="lang-es font-body italic text-text-muted-dark mt-8 text-lg" style="color:var(--color-text-muted-dark)">
+      14 de noviembre, 2026 · 4:00 PM · Hacienda de Chiapa
+    </p>
+    <p class="lang-en font-body italic text-text-muted-dark mt-8 text-lg" style="color:var(--color-text-muted-dark)">
+      November 14, 2026 · 4:00 PM · Hacienda de Chiapa
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     3. MOMENTOS NUESTROS  — Style A (light)   #nosotros
+════════════════════════════════════════════════════════════ -->
+<section id="nosotros" class="section-light py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <!-- Heading -->
+    <div class="text-center mb-14">
+      <p class="lang-es section-eyebrow text-terracota tracking-widest mb-3">Momentos</p>
+      <p class="lang-en section-eyebrow text-terracota tracking-widest mb-3">Moments</p>
+      <h2 class="lang-es font-script text-5xl sm:text-6xl section-title-light mb-3">Momentos Nuestros</h2>
+      <h2 class="lang-en font-script text-5xl sm:text-6xl section-title-light mb-3">Our Moments</h2>
+      <hr class="divider max-w-xs mx-auto" />
+    </div>
+
+    <!-- Polaroid grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
+
+      <!-- Photo 1 -->
+      <div class="polaroid polaroid-r1">
+        <img src="images/moments-1.jpg" alt="Nuestras primeras vacaciones" loading="lazy" />
+        <p class="polaroid-caption lang-es">Nuestras primeras vacaciones</p>
+        <p class="polaroid-caption lang-en">Our first getaway</p>
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="polaroid polaroid-r2">
+        <img src="images/moments-2.jpg" alt="El lugar donde todo cambió" loading="lazy" />
+        <p class="polaroid-caption lang-es">El lugar donde todo cambió</p>
+        <p class="polaroid-caption lang-en">Where everything changed</p>
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="polaroid polaroid-r3">
+        <img src="images/moments-3.jpg" alt="La propuesta" loading="lazy" />
+        <p class="polaroid-caption lang-es">La propuesta (¡sorpresa!)</p>
+        <p class="polaroid-caption lang-en">The proposal (surprise!)</p>
+      </div>
+
+      <!-- Photo 4 -->
+      <div class="polaroid polaroid-r4">
+        <img src="images/moments-4.jpg" alt="Aventureros sin plan" loading="lazy" />
+        <p class="polaroid-caption lang-es">Aventureros sin plan</p>
+        <p class="polaroid-caption lang-en">Adventurers without a plan</p>
+      </div>
+
+      <!-- Photo 5 -->
+      <div class="polaroid polaroid-r5">
+        <img src="images/moments-5.jpg" alt="Nuestro lugar favorito" loading="lazy" />
+        <p class="polaroid-caption lang-es">Nuestro lugar favorito</p>
+        <p class="polaroid-caption lang-en">Our happy place</p>
+      </div>
+
+      <!-- Photo 6 -->
+      <div class="polaroid polaroid-r6">
+        <img src="images/moments-6.jpg" alt="Una foto que nos hace reír" loading="lazy" />
+        <p class="polaroid-caption lang-es">Una foto que nos hace reír</p>
+        <p class="polaroid-caption lang-en">A photo that still makes us laugh</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     4. DETALLES DEL EVENTO  — Style B (dark)
+     Anchors: #ceremonia  #recepcion
+════════════════════════════════════════════════════════════ -->
+<section class="section-dark py-20 px-6">
+  <div class="max-w-3xl mx-auto">
+
+    <!-- Section heading -->
+    <div class="text-center mb-14">
+      <p class="lang-es section-eyebrow text-terracota-soft tracking-widest mb-3">El gran día</p>
+      <p class="lang-en section-eyebrow text-terracota-soft tracking-widest mb-3">The big day</p>
+      <h2 class="lang-es font-script text-5xl sm:text-6xl section-title-dark mb-3">Detalles del Evento</h2>
+      <h2 class="lang-en font-script text-5xl sm:text-6xl section-title-dark mb-3">Event Details</h2>
+      <hr class="divider-dark max-w-xs mx-auto" />
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-8">
+
+      <!-- Ceremonia -->
+      <div id="ceremonia" class="event-card">
+        <div class="illustration-wrap">
+          <img class="illustration-img mx-auto" src="images/illustration-capilla.png" alt="" aria-hidden="true" />
+        </div>
+        <p class="lang-es section-eyebrow text-terracota-soft tracking-widest mb-2">Ceremonia</p>
+        <p class="lang-en section-eyebrow text-terracota-soft tracking-widest mb-2">Ceremony</p>
+        <p class="font-display font-bold text-2xl text-bg-light mb-1">4:00 PM</p>
+        <p class="font-body italic text-bg-light text-base mb-1">Capilla del Sagrado Corazón de Jesús</p>
+        <p class="text-sm mb-5" style="color:var(--color-text-muted-dark)">Emiliano Zapata, 28530 Chiapa, Col.</p>
+        <a href="https://maps.app.goo.gl/joyzP46fG5rWHTnz9" target="_blank" rel="noopener" class="btn-dark lang-es">Cómo llegar</a>
+        <a href="https://maps.app.goo.gl/joyzP46fG5rWHTnz9" target="_blank" rel="noopener" class="btn-dark lang-en">Get Directions</a>
+      </div>
+
+      <!-- Recepción -->
+      <div id="recepcion" class="event-card">
+        <p class="lang-es section-eyebrow text-terracota-soft tracking-widest mb-2">Recepción</p>
+        <p class="lang-en section-eyebrow text-terracota-soft tracking-widest mb-2">Reception</p>
+        <p class="font-display font-bold text-2xl text-bg-light mb-1">5:00 PM</p>
+        <p class="font-body italic text-bg-light text-base mb-1">Hacienda de Chiapa</p>
+        <p class="text-sm mb-5" style="color:var(--color-text-muted-dark)">28530 Chiapa, Colima</p>
+        <a href="https://maps.app.goo.gl/iGm8Wd3z4FKvBzHbA" target="_blank" rel="noopener" class="btn-dark lang-es">Cómo llegar</a>
+        <a href="https://maps.app.goo.gl/iGm8Wd3z4FKvBzHbA" target="_blank" rel="noopener" class="btn-dark lang-en">Get Directions</a>
+      </div>
+
+    </div>
+
+    <!-- Dress Code -->
+    <div class="mt-12 text-center">
+      <hr class="divider-dark mb-10" />
+      <div class="illustration-wrap">
+        <img class="illustration-img mx-auto" src="images/illustration-dressCode.png" alt="" aria-hidden="true" />
+      </div>
+      <p class="lang-es section-eyebrow text-terracota-soft tracking-widest mb-3">Código de vestimenta</p>
+      <p class="lang-en section-eyebrow text-terracota-soft tracking-widest mb-3">Dress Code</p>
+      <p class="font-display font-bold text-3xl text-bg-light mb-3">Cocktail</p>
+      <p class="lang-es font-body italic text-lg" style="color:var(--color-text-muted-dark)">Vístete con lo que te haga brillar</p>
+      <p class="lang-en font-body italic text-lg" style="color:var(--color-text-muted-dark)">Wear what makes you shine</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     5. VIAJE & HOSPEDAJE  — Style A (light)   #viaje
+════════════════════════════════════════════════════════════ -->
+<section id="viaje" class="section-light py-20 px-6">
+  <div class="max-w-3xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-14">
+      <p class="lang-es section-eyebrow text-terracota tracking-widest mb-3">Logística</p>
+      <p class="lang-en section-eyebrow text-terracota tracking-widest mb-3">Getting Here</p>
+      <h2 class="lang-es font-script text-5xl sm:text-6xl section-title-light mb-3">Viaje &amp; Hospedaje</h2>
+      <h2 class="lang-en font-script text-5xl sm:text-6xl section-title-light mb-3">Travel &amp; Stay</h2>
+      <hr class="divider max-w-xs mx-auto" />
+    </div>
+
+    <!-- A. Llegar a Colima -->
+    <div class="mb-10">
+      <h3 class="lang-es font-display font-bold text-xl text-bg-dark mb-3">Llegar a Colima</h3>
+      <h3 class="lang-en font-display font-bold text-xl text-bg-dark mb-3">Getting to Colima</h3>
+      <p class="lang-es font-body italic" style="color:var(--color-text-muted-light)">
+        Colima está bien conectada por aire y carretera. Aquí te compartimos las opciones para llegar.
+      </p>
+      <p class="lang-en font-body italic" style="color:var(--color-text-muted-light)">
+        Colima is well connected by air and road. Here are your travel options.
+      </p>
+      <p class="pending-text text-sm mt-2">[Información de aeropuertos y tiempos de vuelo — próximamente / Airport info coming soon]</p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- B. Hospedaje -->
+    <div class="mb-10">
+      <h3 class="lang-es font-display font-bold text-xl text-bg-dark mb-5">Dónde hospedarse</h3>
+      <h3 class="lang-en font-display font-bold text-xl text-bg-dark mb-5">Where to Stay</h3>
+
+      <!-- Featured hotel -->
+      <div class="hotel-card mb-6">
+        <span class="hotel-badge lang-es mb-3 inline-block">Recomendado</span>
+        <span class="hotel-badge lang-en mb-3 inline-block">Recommended</span>
+        <h4 class="font-display font-bold text-xl text-bg-dark mb-1">Fiesta Inn Colima</h4>
+        <p class="lang-es font-body italic mb-1" style="color:var(--color-text-muted-light)">Nuestro hotel preferido para ustedes</p>
+        <p class="lang-en font-body italic mb-1" style="color:var(--color-text-muted-light)">Our preferred hotel for you</p>
+        <p class="text-sm mb-4" style="color:var(--color-text-muted-light)">
+          <span class="lang-es">A 15 minutos de la Hacienda de Chiapa</span>
+          <span class="lang-en">15 minutes from Hacienda de Chiapa</span>
+        </p>
+        <a href="https://www.corpo-rate.com/login?groupId=G1WEAC@COL" target="_blank" rel="noopener" class="btn-light lang-es">Reservar con descuento</a>
+        <a href="https://www.corpo-rate.com/login?groupId=G1WEAC@COL" target="_blank" rel="noopener" class="btn-light lang-en">Book with discount</a>
+      </div>
+
+      <!-- Other hotels -->
+      <div>
+        <p class="lang-es font-display text-sm font-bold text-bg-dark mb-2">Otras opciones:</p>
+        <p class="lang-en font-display text-sm font-bold text-bg-dark mb-2">Other options:</p>
+        <ul class="font-body italic list-disc list-inside space-y-1" style="color:var(--color-text-muted-light)">
+          <li>Hotel Colima</li>
+          <li>Grand Hotel Colima</li>
+          <li>Casona Boutique Hotel</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- C. Transporte -->
+    <div class="mb-10">
+      <h3 class="lang-es font-display font-bold text-xl text-bg-dark mb-3">Transporte a la Hacienda</h3>
+      <h3 class="lang-en font-display font-bold text-xl text-bg-dark mb-3">Transportation to the Hacienda</h3>
+      <p class="lang-es font-body italic" style="color:var(--color-text-muted-light)">
+        Contaremos con transporte gratis desde Colima a la Hacienda de Chiapa. Horarios y detalles serán compartidos próximamente.
+      </p>
+      <p class="lang-en font-body italic" style="color:var(--color-text-muted-light)">
+        We'll provide free transportation from Colima to Hacienda de Chiapa. Details will be shared soon.
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- D. Qué hacer en Colima -->
+    <div>
+      <h3 class="lang-es font-display font-bold text-xl text-bg-dark mb-5">Qué hacer en Colima</h3>
+      <h3 class="lang-en font-display font-bold text-xl text-bg-dark mb-5">What to Do in Colima</h3>
+
+      <p class="lang-es font-body italic mb-6" style="color:var(--color-text-muted-light)">
+        Si llegas con tiempo, aquí hay lugares que no te puedes perder:
+      </p>
+      <p class="lang-en font-body italic mb-6" style="color:var(--color-text-muted-light)">
+        If you arrive early, here are some must-visit places:
+      </p>
+
+      <!-- Beaches -->
+      <h4 class="font-display font-bold text-base text-bg-dark mb-2">
+        <span class="lang-es">Playas Cercanas</span>
+        <span class="lang-en">Nearby Beaches</span>
+      </h4>
+      <p class="font-body italic text-sm mb-6" style="color:var(--color-text-muted-light)">
+        <span class="lang-es">Manzanillo y Tecomán ofrecen playas hermosas a menos de 2 horas.</span>
+        <span class="lang-en">Manzanillo and Tecomán offer beautiful beaches less than 2 hours away.</span>
+      </p>
+
+      <!-- Gastronomy -->
+      <h4 class="font-display font-bold text-base text-bg-dark mb-3">
+        <span class="lang-es">Gastronomía Local</span>
+        <span class="lang-en">Local Gastronomy</span>
+      </h4>
+      <ul class="space-y-2 mb-6">
+        <li class="font-body italic text-sm" style="color:var(--color-text-muted-light)">
+          <a href="https://share.google/aNZuz1rNoNyMsIj3v" target="_blank" rel="noopener" class="resto-link">Santa María, Cocina Colimota</a>
+          — <span class="lang-es">Comida típica de Colima</span><span class="lang-en">Traditional Colima cuisine</span>
+        </li>
+        <li class="font-body italic text-sm" style="color:var(--color-text-muted-light)">
+          <a href="https://share.google/21mGg0bIePytYXM0b" target="_blank" rel="noopener" class="resto-link">Cronos</a>
+          — <span class="lang-es">Crepas y café</span><span class="lang-en">Crepes and coffee</span>
+        </li>
+        <li class="font-body italic text-sm" style="color:var(--color-text-muted-light)">
+          <a href="https://share.google/3QIhgvD2blLcajmcP" target="_blank" rel="noopener" class="resto-link">Las Jaranas</a>
+          — <span class="lang-es">Chilaquiles colimotes y desayunos</span><span class="lang-en">Colima-style chilaquiles and breakfast</span>
+        </li>
+        <li class="font-body italic text-sm" style="color:var(--color-text-muted-light)">
+          <a href="https://share.google/0hIC7hYpxfZEPYsm2" target="_blank" rel="noopener" class="resto-link">Las Hamacas Del Mayor</a>
+          — <span class="lang-es">Mariscos frescos</span><span class="lang-en">Fresh seafood</span>
+        </li>
+        <li class="font-body italic text-sm" style="color:var(--color-text-muted-light)">
+          <a href="https://share.google/iTsx06uNLryQkNZlm" target="_blank" rel="noopener" class="resto-link">Chepe Parrilla de Barrio</a>
+          — <span class="lang-es">Carnes a la parrilla</span><span class="lang-en">Grilled meats</span>
+        </li>
+        <li class="font-body italic text-sm" style="color:var(--color-text-muted-light)">
+          <a href="https://share.google/nY6Sgy4cOvnbD6WnN" target="_blank" rel="noopener" class="resto-link">Che Lolo</a>
+        </li>
+      </ul>
+
+      <!-- Art & nature -->
+      <h4 class="font-display font-bold text-base text-bg-dark mb-2">
+        <span class="lang-es">Arte y Naturaleza</span>
+        <span class="lang-en">Art &amp; Nature</span>
+      </h4>
+      <ul class="space-y-2 mb-6">
+        <li class="font-body italic text-sm" style="color:var(--color-text-muted-light)">
+          <a href="https://share.google/x7S1m6drt9E5hV5Np" target="_blank" rel="noopener" class="resto-link">Museo Universitario Alejandro Rangel Hidalgo Nogueras</a>
+          — <span class="lang-es">Jardines botánicos y arte</span><span class="lang-en">Botanical gardens and art</span>
+        </li>
+      </ul>
+
+      <!-- Hiking -->
+      <h4 class="font-display font-bold text-base text-bg-dark mb-2">
+        <span class="lang-es">Senderismo</span>
+        <span class="lang-en">Hiking</span>
+      </h4>
+      <p class="pending-text text-sm">[<span class="lang-es">Opciones de rutas — próximamente</span><span class="lang-en">Trail options coming soon</span>]</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     6. REGISTRY / REGALOS  — Style B (dark)   #regalos
+════════════════════════════════════════════════════════════ -->
+<section id="regalos" class="section-dark py-20 px-6">
+  <div class="max-w-2xl mx-auto text-center">
+
+    <p class="lang-es section-eyebrow text-terracota-soft tracking-widest mb-3">Regalos</p>
+    <p class="lang-en section-eyebrow text-terracota-soft tracking-widest mb-3">Gifts</p>
+    <h2 class="lang-es font-script text-5xl sm:text-6xl section-title-dark mb-6">Regalos</h2>
+    <h2 class="lang-en font-script text-5xl sm:text-6xl section-title-dark mb-6">Registry</h2>
+
+    <p class="lang-es font-body italic text-lg mb-2" style="color:var(--color-text-muted-dark)">Tu presencia es lo más importante.</p>
+    <p class="lang-es font-body italic mb-8" style="color:var(--color-text-muted-dark)">Si deseas contribuir con un regalo, aquí está nuestra información bancaria.</p>
+
+    <p class="lang-en font-body italic text-lg mb-2" style="color:var(--color-text-muted-dark)">Your presence is the greatest gift.</p>
+    <p class="lang-en font-body italic mb-8" style="color:var(--color-text-muted-dark)">If you'd like to contribute with a gift, here's our banking information.</p>
+
+    <!-- Toggle button -->
+    <button id="bank-toggle" class="btn-dark flex items-center gap-3 mx-auto">
+      <span class="toggle-label-es lang-es">Detalles bancarios</span>
+      <span class="toggle-label-en lang-en">Bank details</span>
+      <span class="toggle-icon text-lg leading-none">+</span>
+    </button>
+
+    <!-- Expandable bank details -->
+    <div id="bank-details" class="mt-6 text-left">
+      <div class="border border-white/10 rounded-xl overflow-hidden">
+        <table class="w-full text-sm">
+          <tbody>
+            <tr class="border-b border-white/10">
+              <td class="py-3 px-4 font-display font-bold" style="color:var(--color-text-muted-dark)">
+                <span class="lang-es">Nombre</span><span class="lang-en">Account Name</span>
+              </td>
+              <td class="py-3 px-4 font-body italic text-bg-light">
+                <span class="pending-text">[PENDIENTE]</span>
+              </td>
+              <td class="py-3 px-2 text-right"><button class="copy-btn" data-value="[PENDIENTE]">Copiar</button></td>
+            </tr>
+            <tr class="border-b border-white/10">
+              <td class="py-3 px-4 font-display font-bold" style="color:var(--color-text-muted-dark)">
+                <span class="lang-es">Banco</span><span class="lang-en">Bank</span>
+              </td>
+              <td class="py-3 px-4 font-body italic text-bg-light">
+                <span class="pending-text">[PENDIENTE]</span>
+              </td>
+              <td class="py-3 px-2 text-right"><button class="copy-btn" data-value="[PENDIENTE]">Copiar</button></td>
+            </tr>
+            <tr class="border-b border-white/10">
+              <td class="py-3 px-4 font-display font-bold" style="color:var(--color-text-muted-dark)">
+                <span class="lang-es">Número de Cuenta</span><span class="lang-en">Account Number</span>
+              </td>
+              <td class="py-3 px-4 font-body italic text-bg-light">
+                <span class="pending-text">[PENDIENTE]</span>
+              </td>
+              <td class="py-3 px-2 text-right"><button class="copy-btn" data-value="[PENDIENTE]">Copiar</button></td>
+            </tr>
+            <tr class="border-b border-white/10">
+              <td class="py-3 px-4 font-display font-bold" style="color:var(--color-text-muted-dark)">CLABE</td>
+              <td class="py-3 px-4 font-body italic text-bg-light">
+                <span class="pending-text">[PENDIENTE]</span>
+              </td>
+              <td class="py-3 px-2 text-right"><button class="copy-btn" data-value="[PENDIENTE]">Copiar</button></td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-display font-bold" style="color:var(--color-text-muted-dark)">IBAN</td>
+              <td class="py-3 px-4 font-body italic text-bg-light">
+                <span class="pending-text">[PENDIENTE]</span>
+              </td>
+              <td class="py-3 px-2 text-right"><button class="copy-btn" data-value="[PENDIENTE]">Copiar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     7. FAQ  — Style A (light)   #faq
+════════════════════════════════════════════════════════════ -->
+<section id="faq" class="section-light py-20 px-6">
+  <div class="max-w-2xl mx-auto">
+
+    <div class="text-center mb-14">
+      <p class="section-eyebrow text-terracota tracking-widest mb-3">FAQ</p>
+      <h2 class="lang-es font-script text-5xl sm:text-6xl section-title-light mb-3">Preguntas Frecuentes</h2>
+      <h2 class="lang-en font-script text-5xl sm:text-6xl section-title-light mb-3">Frequently Asked Questions</h2>
+      <hr class="divider max-w-xs mx-auto" />
+    </div>
+
+    <!-- ES FAQ -->
+    <div class="lang-es">
+      <details class="faq-item">
+        <summary>¿Hay estacionamiento en la Hacienda?</summary>
+        <p class="faq-answer">El espacio es limitado, pero hay estacionamiento disponible en el pueblo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo traer niños?</summary>
+        <p class="faq-answer">Este evento será sin niños. Esperamos tu comprensión.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿A qué hora termina la celebración?</summary>
+        <p class="faq-answer">Aproximadamente a la 1:00 AM.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Hay código de colores para los invitados?</summary>
+        <p class="faq-answer pending-text">Por definir — próximamente</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué tan formal es el "cocktail"?</summary>
+        <p class="faq-answer pending-text">Por definir — próximamente</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Hay protocolo especial durante la ceremonia?</summary>
+        <p class="faq-answer pending-text">Por definir — próximamente</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Se puede llevar invitados plus one?</summary>
+        <p class="faq-answer pending-text">Por definir — próximamente</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuál es el deadline para confirmar asistencia?</summary>
+        <p class="faq-answer pending-text">Por definir — próximamente</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Habrá música / banda / DJ durante la recepción?</summary>
+        <p class="faq-answer pending-text">Por definir — próximamente</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Hay algo que NO debemos hacer / traer?</summary>
+        <p class="faq-answer pending-text">Por definir — próximamente</p>
+      </details>
+    </div>
+
+    <!-- EN FAQ -->
+    <div class="lang-en">
+      <details class="faq-item">
+        <summary>Is there parking at the Hacienda?</summary>
+        <p class="faq-answer">Space is limited, but parking is available in town.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I bring children?</summary>
+        <p class="faq-answer">This will be an adult-only celebration. We appreciate your understanding.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What time does the celebration end?</summary>
+        <p class="faq-answer">Approximately 1:00 AM.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there a color code for guests?</summary>
+        <p class="faq-answer pending-text">TBD — coming soon</p>
+      </details>
+      <details class="faq-item">
+        <summary>How formal is "cocktail"?</summary>
+        <p class="faq-answer pending-text">TBD — coming soon</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there special protocol during the ceremony?</summary>
+        <p class="faq-answer pending-text">TBD — coming soon</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I bring a plus one?</summary>
+        <p class="faq-answer pending-text">TBD — coming soon</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's the deadline to confirm attendance?</summary>
+        <p class="faq-answer pending-text">TBD — coming soon</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will there be music / band / DJ during the reception?</summary>
+        <p class="faq-answer pending-text">TBD — coming soon</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there anything we shouldn't do / bring?</summary>
+        <p class="faq-answer pending-text">TBD — coming soon</p>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     8. FOOTER  — Style B (dark)
+════════════════════════════════════════════════════════════ -->
+<footer class="section-dark py-16 px-6 text-center">
+  <div class="max-w-lg mx-auto">
+    <p class="font-script text-5xl sm:text-6xl mb-4" style="color:var(--color-text-light)">Gus &amp; Kay</p>
+    <p class="font-display font-bold text-sm tracking-widest mb-8" style="color:var(--color-text-muted-dark)">14 · 11 · 2026</p>
+    <hr class="divider-dark mb-8" />
+    <p class="lang-es font-body italic" style="color:var(--color-text-muted-dark)">
+      [Mensaje de cierre — próximamente]
+    </p>
+    <p class="lang-en font-body italic" style="color:var(--color-text-muted-dark)">
+      [Closing message — coming soon]
+    </p>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
