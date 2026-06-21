@@ -53,33 +53,12 @@ window.addEventListener('scroll', updateNavbar, { passive: true });
 updateNavbar();
 
 /* ── Hero animation ────────────────────────────────────────── */
-const heroContent = document.getElementById('hero-content');
-const heroVideo   = document.getElementById('hero-video');
-
-function showHeroContent() {
-  heroContent.classList.add('visible');
-}
+const heroVideo = document.getElementById('hero-video');
 
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (heroVideo && !prefersReduced) {
-  heroVideo.addEventListener('error', showHeroContent);
-  heroVideo.addEventListener('ended', () => {
-    heroVideo.style.opacity = '0';
-    heroVideo.style.transition = 'opacity 0.5s';
-    showHeroContent();
-  });
-  // If video somehow stalls for > 6s, show content anyway
-  const fallbackTimer = setTimeout(showHeroContent, 6000);
-  heroVideo.addEventListener('ended', () => clearTimeout(fallbackTimer));
-  // If video can't load at all
-  if (heroVideo.readyState === 0) {
-    heroVideo.load();
-  }
-} else {
-  if (heroVideo) heroVideo.style.display = 'none';
-  // Short fade-in for reduced-motion
-  setTimeout(showHeroContent, 150);
+if (heroVideo && prefersReduced) {
+  heroVideo.style.display = 'none';
 }
 
 /* ── Countdown ─────────────────────────────────────────────── */
@@ -91,25 +70,54 @@ function updateCountdown() {
   const now  = new Date();
   const diff = TARGET_DATE - now;
 
+  const aEl = document.getElementById('cd-a');
+  const bEl = document.getElementById('cd-b');
+  const cEl = document.getElementById('cd-c');
+  const setLabels = (aEs, aEn, bEs, bEn, cEs, cEn) => {
+    document.getElementById('cd-a-es').textContent = aEs;
+    document.getElementById('cd-a-en').textContent = aEn;
+    document.getElementById('cd-b-es').textContent = bEs;
+    document.getElementById('cd-b-en').textContent = bEn;
+    document.getElementById('cd-c-es').textContent = cEs;
+    document.getElementById('cd-c-en').textContent = cEn;
+  };
+
   if (diff <= 0) {
-    ['cd-days','cd-hours','cd-minutes'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.textContent = '00';
-    });
+    if (aEl) aEl.textContent = '00';
+    if (bEl) bEl.textContent = '00';
+    if (cEl) cEl.textContent = '00';
     return;
   }
 
-  const days    = Math.floor(diff / 86400000);
-  const hours   = Math.floor((diff % 86400000) / 3600000);
-  const minutes = Math.floor((diff % 3600000) / 60000);
+  const totalDays = Math.floor(diff / 86400000);
 
-  const dEl = document.getElementById('cd-days');
-  const hEl = document.getElementById('cd-hours');
-  const mEl = document.getElementById('cd-minutes');
+  if (totalDays >= 100) {
+    // Mode: Meses / Días / Horas
+    let months = (TARGET_DATE.getFullYear() - now.getFullYear()) * 12
+               + TARGET_DATE.getMonth() - now.getMonth();
+    const afterMonths = new Date(now.getFullYear(), now.getMonth() + months, now.getDate(),
+                                 now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds());
+    if (afterMonths > TARGET_DATE) months--;
+    const remainder = new Date(now.getFullYear(), now.getMonth() + months, now.getDate(),
+                               now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds());
+    const remDiff = TARGET_DATE - remainder;
+    const days  = Math.floor(remDiff / 86400000);
+    const hours = Math.floor((remDiff % 86400000) / 3600000);
 
-  if (dEl) dEl.textContent = pad(days);
-  if (hEl) hEl.textContent = pad(hours);
-  if (mEl) mEl.textContent = pad(minutes);
+    if (aEl) aEl.textContent = pad(months);
+    if (bEl) bEl.textContent = pad(days);
+    if (cEl) cEl.textContent = pad(hours);
+    setLabels('Meses','Months','Días','Days','Horas','Hours');
+  } else {
+    // Mode: Días / Horas / Minutos
+    const hours   = Math.floor((diff % 86400000) / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+
+    if (aEl) aEl.textContent = pad(totalDays);
+    if (bEl) bEl.textContent = pad(hours);
+    if (cEl) cEl.textContent = pad(minutes);
+    setLabels('Días','Days','Horas','Hours','Minutos','Minutes');
+  }
 }
 
 updateCountdown();
@@ -122,11 +130,11 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
     if (!value || value.includes('PENDIENTE')) return;
 
     navigator.clipboard.writeText(value).then(() => {
-      const original = btn.textContent;
+      const original = btn.innerHTML;
       btn.textContent = html.lang === 'es' ? '¡Copiado!' : 'Copied!';
       btn.classList.add('copied');
       setTimeout(() => {
-        btn.textContent = original;
+        btn.innerHTML = original;
         btn.classList.remove('copied');
       }, 2000);
     });
