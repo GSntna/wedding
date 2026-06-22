@@ -1,14 +1,53 @@
 /* ── CSS Variables ─────────────────────────────────────────── */
 :root {
-  --color-bg-light:         #fcf2e6;
-  --color-bg-dark:          #2c2420;
-  --color-terracota:        #894431;
-  --color-terracota-soft:   #c78272;
-  --color-gold:             #8B6914;
-  --color-text-dark:        #2c2420;
-  --color-text-light:       #fcf2e6;
-  --color-text-muted-light: #8a7a72;
-  --color-text-muted-dark:  #c4afa6;
+  /* ── Base colors ─── */
+  --color-bg-light:         #fcf2e6;  /* Crema — fondo secciones light, texto sobre dark */
+  --color-bg-dark:          #2c2420;  /* Café oscuro — fondo secciones dark, texto sobre light */
+  --color-terracota:        #894431;  /* Acento principal — eyebrows, botones, íconos */
+  --color-terracota-soft:   #c78272;  /* Acento suave — labels countdown, estado copiado */
+  --color-terracota-dark:   #6e3426;  /* Terracota oscuro — hover del btn-light */
+  --color-gold:             #8B6914;  /* Oro — íconos, borde navbar, bullet/línea timeline */
+  --color-gold-bright:      #C99A2E;  /* Oro brillante — texto de enlaces de restaurantes */
+
+  /* ── Text colors ─── */
+  --color-text-dark:        #2c2420;  /* Texto principal sobre fondos claros */
+  --color-text-light:       #fcf2e6;  /* Texto principal sobre fondos oscuros */
+  --color-text-muted-light: #8a7a72;  /* Texto secundario sobre fondos claros */
+  --color-text-muted-dark:  #c4afa6;  /* Texto secundario sobre fondos oscuros */
+
+  /* ── Neutral colors ─── */
+  --color-white:                #ffffff;  /* Marco del polaroid, texto del hotel-badge */
+  --color-polaroid-placeholder: #d1c9c4;  /* Relleno cuando falta la imagen del polaroid */
+
+  /* ── Terracota with transparency ─── */
+  --color-terracota-a08:  rgba(137, 68, 49, 0.08);  /* Fondo hover copy-btn (secciones light) */
+  --color-terracota-a20:  rgba(137, 68, 49, 0.20);  /* Borde event-card (secciones light) */
+  --color-terracota-a25:  rgba(137, 68, 49, 0.25);  /* Borde hotel-card, borde FAQ item */
+  --color-terracota-a30:  rgba(137, 68, 49, 0.30);  /* Borde copy-btn (light), subrayado resto-link */
+  --color-terracota-a35:  rgba(137, 68, 49, 0.35);  /* Borde .divider (separador sección light) */
+
+  /* ── Bg-light (cream) with transparency ─── */
+  --color-bg-light-a08:  rgba(252, 242, 230, 0.08);  /* Fondo countdown-box */
+  --color-bg-light-a10:  rgba(252, 242, 230, 0.10);  /* Fondo hover btn-dark, copy-btn hover (dark) */
+  --color-bg-light-a15:  rgba(252, 242, 230, 0.15);  /* Borde event-card (secciones dark) */
+  --color-bg-light-a18:  rgba(252, 242, 230, 0.18);  /* Borde countdown-box */
+  --color-bg-light-a20:  rgba(252, 242, 230, 0.20);  /* Borde .divider-dark (separador sección dark) */
+  --color-bg-light-a35:  rgba(252, 242, 230, 0.35);  /* Borde copy-btn (secciones dark) */
+  --color-bg-light-a60:  rgba(252, 242, 230, 0.60);  /* Borde btn-dark */
+
+  /* ── Bg-dark with transparency ─── */
+  --color-bg-dark-a06:  rgba(44, 36, 32, 0.06);  /* Fondo hover timeline-btn */
+  --color-bg-dark-a30:  rgba(44, 36, 32, 0.30);  /* Borde timeline-btn */
+  --color-bg-dark-a50:  rgba(44, 36, 32, 0.50);  /* Borde hover timeline-btn */
+
+  /* ── Gold with transparency ─── */
+  --color-gold-a30:  rgba(139, 105, 20, 0.30);  /* Subrayado del enlace de restaurantes */
+
+  /* ── Shadows ─── */
+  --shadow-polaroid:       2px 4px 14px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.1);  /* Polaroid en reposo */
+  --shadow-polaroid-hover: 4px 8px 24px rgba(0,0,0,0.22);                              /* Polaroid al hacer hover */
+
+  /* ── Typographies  ─── */
   --font-display: 'Cardo', serif;
   --font-body:    'Cardo', serif;
   --font-script:  'Great Vibes', cursive;
@@ -31,12 +70,12 @@ body {
 /* ── Separators ────────────────────────────────────────────── */
 .divider {
   border: none;
-  border-top: 1px solid rgba(137, 68, 49, 0.35);
+  border-top: 1px solid var(--color-terracota-a35);
   margin: 2rem 0;
 }
 .divider-dark {
   border: none;
-  border-top: 1px solid rgba(252, 242, 230, 0.2);
+  border-top: 1px solid var(--color-bg-light-a20);
   margin: 2rem 0;
 }
 
@@ -69,7 +108,7 @@ body {
     height: 46px;
     padding: 0;
     margin-left: auto;
-    border: 0.5px solid #8B6914;
+    border: 0.5px solid var(--color-gold);
     justify-content: center;
   }
   #navbar .nav-links,
@@ -103,7 +142,7 @@ body {
     background: var(--color-bg-dark);
     color: var(--color-text-light);
     border-radius: 9999px;
-    border: 0.5px solid #8B6914;
+    border: 0.5px solid var(--color-gold);
     padding: 0.35rem 0.4rem 0.35rem 1.25rem;
     gap: 0.75rem;
     justify-content: center;
@@ -316,8 +355,8 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 
 /* ── Countdown ─────────────────────────────────────────────── */
 .countdown-box {
-  background: rgba(252, 242, 230, 0.08);
-  border: 1px solid rgba(252, 242, 230, 0.18);
+  background: var(--color-bg-light-a08);
+  border: 1px solid var(--color-bg-light-a18);
   border-radius: 1rem;
   padding: 1.5rem 2rem;
   min-width: 90px;
@@ -342,16 +381,16 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 
 /* ── Polaroid ──────────────────────────────────────────────── */
 .polaroid {
-  background: #fff;
+  background: var(--color-white);
   padding: 12px 12px 40px;
-  box-shadow: 2px 4px 14px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-polaroid);
   display: inline-block;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
 }
 .polaroid:hover {
   transform: rotate(0deg) scale(1.03) !important;
-  box-shadow: 4px 8px 24px rgba(0,0,0,0.22);
+  box-shadow: var(--shadow-polaroid-hover);
 }
 .polaroid img, .polaroid .polaroid-placeholder {
   display: block;
@@ -360,7 +399,7 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   object-fit: cover;
 }
 .polaroid .polaroid-placeholder {
-  background: #d1c9c4;
+  background: var(--color-polaroid-placeholder);
 }
 .polaroid .polaroid-caption {
   font-family: var(--font-body);
@@ -394,7 +433,7 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   cursor: pointer;
   transition: background 0.2s;
 }
-.btn-light:hover { background: #6e3426; }
+.btn-light:hover { background: var(--color-terracota-dark); }
 
 .btn-dark {
   display: inline-block;
@@ -405,22 +444,22 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   letter-spacing: 0.05em;
   padding: 0.65rem 1.4rem;
   border-radius: 5px;
-  border: 1px solid rgba(252, 242, 230, 0.6);
+  border: 1px solid var(--color-bg-light-a60);
   cursor: pointer;
   text-decoration: none;
   transition: background 0.2s;
 }
-.btn-dark:hover { background: rgba(252, 242, 230, 0.1); }
+.btn-dark:hover { background: var(--color-bg-light-a10); }
 
 /* ── Event detail card ─────────────────────────────────────── */
 .event-card {
-  border: 1px solid rgba(252, 242, 230, 0.15);
+  border: 1px solid var(--color-bg-light-a15);
   border-radius: 0.75rem;
   padding: 2rem 1.5rem;
   text-align: center;
 }
 .section-light .event-card {
-  border-color: rgba(137, 68, 49, 0.2);
+  border-color: var(--color-terracota-a20);
 }
 
 /* ── Event Timeline (zigzag) ──────────────────────────────── */
@@ -435,7 +474,7 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   top: 0;
   bottom: 0;
   width: 1.5px;
-  background: linear-gradient(to bottom, #8B6914, #894431);
+  background: linear-gradient(to bottom, var(--color-gold), var(--color-terracota));
   transform: translateX(-50%);
 }
 
@@ -468,7 +507,7 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 }
 
 .timeline-time {
-  font-family: 'Cardo', serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
@@ -476,27 +515,27 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 }
 
 .timeline-label {
-  font-family: 'Cardo', serif;
+  font-family: var(--font-display);
   font-style: italic;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #894431;
+  color: var(--color-terracota);
   margin-bottom: 8px;
 }
 
 .timeline-venue {
-  font-family: 'Cardo', serif;
+  font-family: var(--font-display);
   font-size: 15px;
-  color: #2c2420;
+  color: var(--color-text-dark);
   margin-bottom: 4px;
 }
 
 .timeline-address {
-  font-family: 'Cardo', serif;
+  font-family: var(--font-display);
   font-style: italic;
   font-size: 11px;
-  color: #8a7a72;
+  color: var(--color-text-muted-light);
   margin-bottom: 12px;
 }
 
@@ -504,11 +543,11 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-family: 'Cardo', serif;
+  font-family: var(--font-display);
   font-style: italic;
   font-size: 12px;
-  color: #2c2420;
-  border: 1px solid rgba(44, 36, 32, 0.3);
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-bg-dark-a30);
   border-radius: 6px;
   padding: 6px 14px;
   text-decoration: none;
@@ -516,8 +555,8 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 }
 
 .timeline-btn:hover {
-  background: rgba(44, 36, 32, 0.06);
-  border-color: rgba(44, 36, 32, 0.5);
+  background: var(--color-bg-dark-a06);
+  border-color: var(--color-bg-dark-a50);
 }
 
 @media (max-width: 639px) {
@@ -552,7 +591,7 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 
 .copy-btn {
   background: none;
-  border: 1px solid rgba(252, 242, 230, 0.35);
+  border: 1px solid var(--color-bg-light-a35);
   color: var(--color-text-muted-dark);
   font-family: var(--font-display);
   font-size: 0.7rem;
@@ -563,15 +602,15 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   transition: all 0.15s;
   white-space: nowrap;
 }
-.copy-btn:hover { background: rgba(252, 242, 230, 0.1); color: var(--color-text-light); }
+.copy-btn:hover { background: var(--color-bg-light-a10); color: var(--color-text-light); }
 .copy-btn.copied { color: var(--color-terracota-soft); border-color: var(--color-terracota-soft); }
 
 .section-light .copy-btn {
-  border-color: rgba(137, 68, 49, 0.3);
+  border-color: var(--color-terracota-a30);
   color: var(--color-text-muted-light);
 }
 .section-light .copy-btn:hover {
-  background: rgba(137, 68, 49, 0.08);
+  background: var(--color-terracota-a08);
   color: var(--color-terracota);
 }
 .section-light .copy-btn.copied {
@@ -581,7 +620,7 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 
 /* ── FAQ accordion ─────────────────────────────────────────── */
 details.faq-item {
-  border-bottom: 1px solid rgba(137, 68, 49, 0.25);
+  border-bottom: 1px solid var(--color-terracota-a25);
 }
 details.faq-item summary {
   font-family: var(--font-display);
@@ -618,9 +657,9 @@ details.faq-item .faq-answer {
 
 /* ── Restaurant links ──────────────────────────────────────── */
 .resto-link {
-  color: #C99A2E;
+  color: var(--color-gold-bright);
   text-decoration: none;
-  border-bottom: 1px solid rgba(139,105,20,0.3);
+  border-bottom: 1px solid var(--color-gold-a30);
   transition: border-color 0.2s;
 }
 .resto-link:hover { border-color: var(--color-gold); }
@@ -645,14 +684,14 @@ details.faq-item .faq-answer {
 
 /* ── Hotel card ────────────────────────────────────────────── */
 .hotel-card {
-  border: 1px solid rgba(137, 68, 49, 0.25);
+  border: 1px solid var(--color-terracota-a25);
   border-radius: 0.75rem;
   padding: 1.5rem;
 }
 .hotel-badge {
   display: inline-block;
   background: var(--color-gold);
-  color: #fff;
+  color: var(--color-white);
   font-family: var(--font-display);
   font-size: 0.65rem;
   letter-spacing: 0.1em;
