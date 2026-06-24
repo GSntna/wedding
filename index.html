@@ -108,15 +108,6 @@
      1. HERO  — Style A (light)
 ════════════════════════════════════════════════════════════ -->
 <section id="hero">
-  <!-- Background photo -->
-  <img id="hero-bg" src="images/hero-hacienda.jpg" alt="" aria-hidden="true" />
-
-  <!-- Intro video -->
-  <video id="hero-video" autoplay muted playsinline preload="auto" aria-hidden="true">
-    <source src="images/animation-hero.mp4" type="video/mp4; codecs=hvc1">
-    <source src="images/animation-hero.webm" type="video/webm" />
-  </video>
-
   <!-- Hero text -->
   <div id="hero-content" class="text-center px-6 max-w-xl mx-auto">
     <!-- ES -->
@@ -141,6 +132,9 @@
       Hacienda de Chiapa, Colima
     </p>
   </div>
+
+  <!-- Venue illustration -->
+  <img id="hero-venue" src="images/venue.png" alt="Hacienda de Chiapa" />
 </section>
 
 <!-- ════════════════════════════════════════════════════════════
@@ -256,6 +250,8 @@
       <hr class="divider max-w-xs mx-auto" />
     </div>
 
+    <img id="illust-glass" src="images/glass.png" alt="" class="section-illustration mx-auto mb-10" />
+
     <!-- Event Timeline -->
     <div class="event-timeline">
       <div class="timeline-line" aria-hidden="true"></div>
@@ -310,13 +306,28 @@
     <div class="mt-12 text-center">
       <hr class="divider mb-10" />
       <div class="illustration-wrap">
-        <img class="illustration-img mx-auto" src="images/illustration-dressCode.png" alt="" aria-hidden="true" />
+        <img class="illustration-img mx-auto" src="images/dress_code.png" alt="" aria-hidden="true" />
       </div>
       <p class="lang-es section-eyebrow text-terracota tracking-widest mb-3">Código de vestimenta</p>
       <p class="lang-en section-eyebrow text-terracota tracking-widest mb-3">Dress Code</p>
       <p class="font-display font-bold text-3xl text-bg-dark mb-3">Formal</p>
-      <p class="lang-es font-body italic text-lg" style="color:var(--color-text-muted-light)">Vístete con lo que te haga brillar</p>
-      <p class="lang-en font-body italic text-lg" style="color:var(--color-text-muted-light)">Wear what makes you shine</p>
+      <!-- <p class="lang-es font-body italic text-lg" style="color:var(--color-text-muted-light)">Evita usar blanco</p>
+      <p class="lang-en font-body italic text-lg" style="color:var(--color-text-muted-light)">Please avoid wearing white</p> -->
+
+      <!-- Pinterest card -->
+      <div class="pinterest-card">
+        <i class="ti ti-hanger-2 pinterest-card-icon" aria-hidden="true"></i>
+        <p class="lang-es pinterest-card-title">Tablero de inspiración</p>
+        <p class="lang-en pinterest-card-title">Inspiration board</p>
+        <p class="lang-es pinterest-card-desc">Outfits formales para inspirarte antes del gran día.</p>
+        <p class="lang-en pinterest-card-desc">Formal outfit ideas to inspire you before the big day.</p>
+        <a href="#" class="pinterest-card-btn lang-es">
+          <span>Ver en Pinterest</span><i class="ti ti-external-link" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="pinterest-card-btn lang-en">
+          <span>View on Pinterest</span><i class="ti ti-external-link" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
 
     <!-- Sin niños -->
@@ -449,6 +460,8 @@
 
 
   </div>
+
+  <img id="illust-chair" src="images/chair.png" alt="" class="section-illustration" />
 </section>
 
 <!-- ════════════════════════════════════════════════════════════

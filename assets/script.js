@@ -52,15 +52,6 @@ function updateNavbar() {
 window.addEventListener('scroll', updateNavbar, { passive: true });
 updateNavbar();
 
-/* ── Hero animation ────────────────────────────────────────── */
-const heroVideo = document.getElementById('hero-video');
-
-const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (heroVideo && prefersReduced) {
-  heroVideo.style.display = 'none';
-}
-
 /* ── Countdown ─────────────────────────────────────────────── */
 const TARGET_DATE = new Date('2026-11-14T22:00:00Z'); // 4 PM UTC-6 = 22:00 UTC
 
@@ -166,15 +157,23 @@ document.querySelectorAll('.polaroid img').forEach(img => {
   });
 });
 
-/* ── Hero background image fallback ───────────────────────── */
-const heroBg = document.getElementById('hero-bg');
-if (heroBg) {
-  heroBg.addEventListener('error', () => { heroBg.style.display = 'none'; });
-}
-
 /* ── Illustration fallback ─────────────────────────────────── */
 document.querySelectorAll('.illustration-img').forEach(img => {
   img.addEventListener('error', function () {
     this.closest('.illustration-wrap')?.remove();
   });
+});
+
+/* ── Illustration fade-in on scroll ───────────────────────── */
+const illustrationObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      illustrationObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.section-illustration, #hero-venue').forEach(img => {
+  illustrationObserver.observe(img);
 });
