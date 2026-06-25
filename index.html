@@ -17,7 +17,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Luxurious+Script&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -28,14 +28,14 @@
           colors: {
             'bg-light':       '#fcf2e6',
             'bg-dark':        '#2c2420',
-            'terracota':      '#894431',
-            'terracota-soft': '#c78272',
+            'terracota':      '#b80a59',
+            'terracota-soft': '#000000',
             'gold':           '#8B6914',
           },
           fontFamily: {
             display: ['Cardo', 'serif'],
             body:    ['Cardo', 'serif'],
-            script:  ['Great Vibes', 'cursive'],
+            script:  ['Luxurious Script', 'cursive'],
           }
         }
       }
@@ -111,8 +111,8 @@
   <!-- Hero text -->
   <div id="hero-content" class="text-center px-6 max-w-xl mx-auto">
     <!-- ES -->
-    <p class="lang-es section-eyebrow text-terracota mb-4 tracking-widest">14 · Nov · 2026</p>
-    <h1 class="lang-es font-script text-5xl sm:text-7xl md:text-8xl text-bg-dark leading-tight mb-4">
+    <p class="lang-es section-eyebrow text-bg-dark mb-4 tracking-widest">14 · Nov · 2026</p>
+    <h1 class="lang-es font-script text-7xl sm:text-7xl md:text-8xl text-bg-dark leading-tight mb-4">
       ¡Nos vamos <br />a casar!
     </h1>
     <p class="lang-es font-display text-lg sm:text-2xl text-bg-dark mb-6">
@@ -120,7 +120,7 @@
     </p>
     <!-- EN -->
     <p class="lang-en section-eyebrow text-terracota mb-4 tracking-widest">November 14 · 2026</p>
-    <h1 class="lang-en font-script text-5xl sm:text-7xl md:text-8xl text-bg-dark leading-tight mb-4">
+    <h1 class="lang-en font-script text-7xl sm:text-7xl md:text-8xl text-bg-dark leading-tight mb-4">
       We're getting married!
     </h1>
     <p class="lang-en font-display text-lg sm:text-2xl text-bg-dark mb-6">
@@ -258,13 +258,13 @@
 
       <!-- Ceremonia — left -->
       <div id="ceremonia" class="timeline-item timeline-left">
-        <div class="timeline-bullet" style="background:#8B6914;" aria-hidden="true"></div>
+        <div class="timeline-bullet" style="background:#a0a060;" aria-hidden="true"></div>
         <div class="timeline-content">
-          <p class="timeline-time" style="color:#8B6914;">4:00 PM</p>
-          <p class="timeline-label lang-es">Ceremonia</p>
-          <p class="timeline-label lang-en">Ceremony</p>
+          <p class="timeline-time" style="color:#a0a060;">4:00 PM</p>
+          <p class="timeline-label lang-es" style="color:#a0a060;">Ceremonia</p>
+          <p class="timeline-label lang-en" style="color:#a0a060;">Ceremony</p>
           <p class="timeline-venue">Capilla del Sagrado Corazón de Jesús</p>
-          <p class="timeline-address">Emiliano Zapata, 28530 Chiapa, Col.</p>
+          <p class="timeline-address" style="color:black;">Emiliano Zapata, 28530 Chiapa, Col.</p>
           <a href="https://maps.app.goo.gl/joyzP46fG5rWHTnz9" target="_blank" rel="noopener" class="timeline-btn lang-es">
             <span>Cómo llegar</span><i class="ti ti-arrow-right" aria-hidden="true"></i>
           </a>
@@ -276,13 +276,13 @@
 
       <!-- Recepción — right -->
       <div id="recepcion" class="timeline-item timeline-right">
-        <div class="timeline-bullet" style="background:#894431;" aria-hidden="true"></div>
+        <div class="timeline-bullet" style="background:#b80a59;" aria-hidden="true"></div>
         <div class="timeline-content">
-          <p class="timeline-time" style="color:#894431;">5:00 PM</p>
-          <p class="timeline-label lang-es">Recepción</p>
-          <p class="timeline-label lang-en">Reception</p>
+          <p class="timeline-time" style="color:#b80a59;">5:00 PM</p>
+          <p class="timeline-label lang-es" style="color:#b80a59;">Recepción</p>
+          <p class="timeline-label lang-en" style="color:#b80a59;">Reception</p>
           <p class="timeline-venue">Hacienda de Chiapa</p>
-          <p class="timeline-address">28530 Chiapa, Colima</p>
+          <p class="timeline-address" style="color:black;">28530 Chiapa, Colima</p>
           <a href="https://maps.app.goo.gl/iGm8Wd3z4FKvBzHbA" target="_blank" rel="noopener" class="timeline-btn lang-es">
             <span>Cómo llegar</span><i class="ti ti-arrow-right" aria-hidden="true"></i>
           </a>
@@ -310,7 +310,7 @@
       </div>
       <p class="lang-es section-eyebrow text-terracota tracking-widest mb-3">Código de vestimenta</p>
       <p class="lang-en section-eyebrow text-terracota tracking-widest mb-3">Dress Code</p>
-      <p class="font-display font-bold text-3xl text-bg-dark mb-3">Formal</p>
+      <p class="font-script text-5xl text-bg-dark mb-3">Formal</p>
       <!-- <p class="lang-es font-body italic text-lg" style="color:var(--color-text-muted-light)">Evita usar blanco</p>
       <p class="lang-en font-body italic text-lg" style="color:var(--color-text-muted-light)">Please avoid wearing white</p> -->
 
@@ -334,17 +334,19 @@
     <div class="mt-10 text-center">
       <hr class="divider mb-10" />
       <p class="lang-es font-body italic text-lg" style="color:var(--color-text-muted-light)">
-        A pesar de que amamos a tus pequeños, también queremos que disfrutes,<br />por lo que la boda es <strong class="font-display not-italic" style="color:var(--color-text-dark)">sin niños</strong>
+        A pesar de que amamos a tus pequeños, también queremos que disfrutes, por lo que la boda es <br /><strong class="font-display not-italic" style="color:var(--color-text-dark)">sin niños.</strong>
       </p>
       <p class="lang-en font-body italic text-lg" style="color:var(--color-text-muted-light)">
-        Although we love your little ones, we also want you to enjoy yourself,<br />so the wedding is <strong class="font-display not-italic" style="color:var(--color-text-dark)">child-free</strong>
+        Although we love your little ones, we also want you to enjoy yourself, so the wedding is <br /><strong class="font-display not-italic" style="color:var(--color-text-dark)">child-free.</strong>
       </p>
     </div>
 
   </div>
 </section>
 
-<hr style="border:none;border-top:1px solid rgba(137,68,49,0.18);margin:0;" />
+<div class="text-center py-0">
+  <i class="ti ti-heart-filled text-2xl" style="color:var(--color-terracota)" aria-hidden="true"></i>
+</div>
 
 <!-- ════════════════════════════════════════════════════════════
      5. VIAJE & HOSPEDAJE  — Style A (light)   #viaje
@@ -370,7 +372,7 @@
 
         <!-- CLQ -->
         <div class="flex items-start gap-3">
-          <i class="ti ti-plane text-2xl text-gold flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+          <i class="ti ti-plane text-2xl text-terracota flex-shrink-0 mt-0.5" aria-hidden="true"></i>
           <div>
             <p class="font-display font-bold text-bg-dark">Aeropuerto Nacional de Colima Licenciado Miguel de la Madrid (CLQ)</p>
             <p class="font-body italic text-sm mt-1" style="color:var(--color-text-muted-light)">
@@ -382,7 +384,7 @@
 
         <!-- GDL -->
         <div class="flex items-start gap-3">
-          <i class="ti ti-plane text-2xl text-gold flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+          <i class="ti ti-plane text-2xl text-terracota flex-shrink-0 mt-0.5" aria-hidden="true"></i>
           <div>
             <p class="font-display font-bold text-bg-dark">Aeropuerto Internacional de Guadalajara Miguel Hidalgo y Costilla (GDL)</p>
             <p class="font-body italic text-sm mt-1" style="color:var(--color-text-muted-light)">
@@ -394,7 +396,7 @@
 
         <!-- ZLO -->
         <div class="flex items-start gap-3">
-          <i class="ti ti-plane text-2xl text-gold flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+          <i class="ti ti-plane text-2xl text-terracota flex-shrink-0 mt-0.5" aria-hidden="true"></i>
           <div>
             <p class="font-display font-bold text-bg-dark">Aeropuerto Internacional de Manzanillo Plata de Oro (ZLO)</p>
             <p class="font-body italic text-sm mt-1" style="color:var(--color-text-muted-light)">
@@ -417,8 +419,8 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-[18px]">
 
         <!-- Fiesta Inn Colima -->
-        <div class="rounded-xl p-6 border border-terracota/25 border-t-[3px] border-t-gold">
-          <i class="ti ti-building-skyscraper text-2xl text-gold" aria-hidden="true"></i>
+        <div class="rounded-xl p-6 border border-gold/25 border-t-[3px] border-t-terracota">
+          <i class="ti ti-building-skyscraper text-2xl text-terracota" aria-hidden="true"></i>
           <h4 class="font-display font-bold text-lg text-bg-dark mt-2.5 mb-1">Fiesta Inn Colima</h4>
           <p class="font-display italic text-sm mb-3.5" style="color:var(--color-text-muted-light)">
             <span class="lang-es">15 minutos de la Hacienda de Chiapa</span>
@@ -434,8 +436,8 @@
         </div>
 
         <!-- GAMMA Hoteles -->
-        <div class="rounded-xl p-6 border border-terracota/25 border-t-[3px] border-t-gold">
-          <i class="ti ti-building-skyscraper text-2xl text-gold" aria-hidden="true"></i>
+        <div class="rounded-xl p-6 border border-gold/25 border-t-[3px] border-t-terracota">
+          <i class="ti ti-building-skyscraper text-2xl text-terracota" aria-hidden="true"></i>
           <h4 class="font-display font-bold text-lg text-bg-dark mt-2.5 mb-1">GAMMA Hoteles</h4>
           <p class="font-display italic text-sm mb-3.5" style="color:var(--color-text-muted-light)">
             <span class="lang-es">15 minutos de la Hacienda de Chiapa</span>
@@ -520,16 +522,16 @@
 <section id="regalos" class="section-light py-20 px-6">
   <div class="max-w-2xl mx-auto text-center">
 
-    <p class="lang-es section-eyebrow text-terracota tracking-widest mb-3">Regalos</p>
-    <p class="lang-en section-eyebrow text-terracota tracking-widest mb-3">Gifts</p>
+    <p class="lang-es section-eyebrow text-terracota tracking-widest mb-3">Para nuestro próximo capítulo</p>
+    <p class="lang-en section-eyebrow text-terracota tracking-widest mb-3">For our next chapter</p>
     <h2 class="lang-es font-script text-5xl sm:text-6xl section-title-light mb-6">Regalos</h2>
     <h2 class="lang-en font-script text-5xl sm:text-6xl section-title-light mb-6">Registry</h2>
 
-    <p class="lang-es font-body italic text-lg mb-2" style="color:var(--color-text-muted-light)">Tu presencia es lo más importante.</p>
-    <p class="lang-es font-body italic mb-8" style="color:var(--color-text-muted-light)">Si deseas contribuir con un regalo, aquí está nuestra información bancaria.</p>
+    <p class="lang-es font-body italic text-lg mb-2" style="color:var(--color-text-muted-light)">Tu presencia es el regalo más <br>grande para nosotros.</p>
+    <p class="lang-es font-body italic mb-8" style="color:var(--color-text-muted-light)">Aun así, si deseas dejarnos un pequeño gesto para nuestro nuevo capítulo puedes hacerlo aquí</p>
 
     <p class="lang-en font-body italic text-lg mb-2" style="color:var(--color-text-muted-light)">Your presence is the greatest gift.</p>
-    <p class="lang-en font-body italic mb-8" style="color:var(--color-text-muted-light)">If you'd like to contribute with a gift, here's our banking information.</p>
+    <p class="lang-en font-body italic mb-8" style="color:var(--color-text-muted-light)">However, if you'd like to give us a small token of your love for our new chapter, you can do so here.</p>
 
     <!-- Toggle button -->
     <button id="bank-toggle" class="btn-light flex items-center gap-3 mx-auto">
@@ -597,14 +599,14 @@
 ════════════════════════════════════════════════════════════ -->
 <footer class="section-dark py-16 px-6 text-center">
   <div class="max-w-lg mx-auto">
-    <p class="font-script text-5xl sm:text-6xl mb-4" style="color:var(--color-text-light)">Karla &amp; Gus</p>
+    <p class="font-script text-5xl sm:text-6xl mb-4" style="color:var(--color-text-light)">Karla &amp; Gustavo</p>
     <p class="font-display font-bold text-sm tracking-widest mb-8" style="color:var(--color-text-muted-dark)">14 · 11 · 2026</p>
     <hr class="divider-dark mb-8" />
     <p class="lang-es font-body italic" style="color:var(--color-text-muted-dark)">
-      [Mensaje de cierre — próximamente]
+      Esperamos este día con mucho amor, <br />¡Nos vemos pronto!
     </p>
     <p class="lang-en font-body italic" style="color:var(--color-text-muted-dark)">
-      [Closing message — coming soon]
+      We look forward to this day with much love, <br />see you soon!
     </p>
   </div>
 </footer>

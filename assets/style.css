@@ -2,10 +2,11 @@
 :root {
   /* ── Base colors ─── */
   --color-bg-light:         #fcf2e6;  /* Crema — fondo secciones light, texto sobre dark */
-  --color-bg-dark:          #2c2420;  /* Café oscuro — fondo secciones dark, texto sobre light */
-  --color-terracota:        #894431;  /* Acento principal — eyebrows, botones, íconos */
-  --color-terracota-soft:   #c78272;  /* Acento suave — labels countdown, estado copiado */
-  --color-terracota-dark:   #6e3426;  /* Terracota oscuro — hover del btn-light */
+  --color-bg-dark:          #2c2420;  /* Café oscuro — navbar, menú móvil, texto sobre light */
+  --color-bg-section-dark:  #9e9860;  /* Oliva — fondo secciones dark (countdown, gastronomía, regalos, footer) */
+  --color-terracota:        #b80a59;  /* Acento principal — eyebrows, botones, íconos */
+  --color-terracota-soft:   #000000;  /* Negro — labels countdown, estado copiado */
+  --color-terracota-dark:   #8e0845;  /* Acento oscuro — hover del btn-light */
   --color-gold:             #8B6914;  /* Oro — íconos, borde navbar, bullet/línea timeline */
   --color-gold-bright:      #C99A2E;  /* Oro brillante — texto de enlaces de restaurantes */
 
@@ -13,25 +14,25 @@
   --color-text-dark:        #2c2420;  /* Texto principal sobre fondos claros */
   --color-text-light:       #fcf2e6;  /* Texto principal sobre fondos oscuros */
   --color-text-muted-light: #8a7a72;  /* Texto secundario sobre fondos claros */
-  --color-text-muted-dark:  #c4afa6;  /* Texto secundario sobre fondos oscuros */
+  --color-text-muted-dark:  #000000;  /* Negro — texto secundario sobre fondos oscuros */
 
   /* ── Neutral colors ─── */
   --color-white:                #ffffff;  /* Marco del polaroid, texto del hotel-badge */
   --color-polaroid-placeholder: #d1c9c4;  /* Relleno cuando falta la imagen del polaroid */
 
   /* ── Terracota with transparency ─── */
-  --color-terracota-a08:  rgba(137, 68, 49, 0.08);  /* Fondo hover copy-btn (secciones light) */
-  --color-terracota-a20:  rgba(137, 68, 49, 0.20);  /* Borde event-card (secciones light) */
-  --color-terracota-a25:  rgba(137, 68, 49, 0.25);  /* Borde hotel-card, borde FAQ item */
-  --color-terracota-a30:  rgba(137, 68, 49, 0.30);  /* Borde copy-btn (light), subrayado resto-link */
-  --color-terracota-a35:  rgba(137, 68, 49, 0.35);  /* Borde .divider (separador sección light) */
+  --color-terracota-a08:  rgba(184, 10, 89, 0.08);  /* Fondo hover copy-btn (secciones light) */
+  --color-terracota-a20:  rgba(184, 10, 89, 0.20);  /* Borde event-card (secciones light) */
+  --color-terracota-a25:  rgba(184, 10, 89, 0.25);  /* Borde hotel-card, borde FAQ item */
+  --color-terracota-a30:  rgba(184, 10, 89, 0.30);  /* Borde copy-btn (light), subrayado resto-link */
+  --color-terracota-a35:  black;  /* Borde .divider (separador sección light) */
 
   /* ── Bg-light (cream) with transparency ─── */
   --color-bg-light-a08:  rgba(252, 242, 230, 0.08);  /* Fondo countdown-box */
   --color-bg-light-a10:  rgba(252, 242, 230, 0.10);  /* Fondo hover btn-dark, copy-btn hover (dark) */
   --color-bg-light-a15:  rgba(252, 242, 230, 0.15);  /* Borde event-card (secciones dark) */
   --color-bg-light-a18:  rgba(252, 242, 230, 0.18);  /* Borde countdown-box */
-  --color-bg-light-a20:  rgba(252, 242, 230, 0.20);  /* Borde .divider-dark (separador sección dark) */
+  --color-bg-light-a20:  black;  /* Borde .divider-dark (separador sección dark) */
   --color-bg-light-a35:  rgba(252, 242, 230, 0.35);  /* Borde copy-btn (secciones dark) */
   --color-bg-light-a60:  rgba(252, 242, 230, 0.60);  /* Borde btn-dark */
 
@@ -50,7 +51,7 @@
   /* ── Typographies  ─── */
   --font-display: 'Cardo', serif;
   --font-body:    'Cardo', serif;
-  --font-script:  'Great Vibes', cursive;
+  --font-script:  'Luxurious Script', cursive;
 }
 
 /* ── Base ──────────────────────────────────────────────────── */
@@ -102,13 +103,13 @@ body {
 /* ── Mobile: always dark circle with hamburger ─────────────── */
 @media (max-width: 639px) {
   #navbar .nav-inner {
-    background: var(--color-bg-dark);
+    background: var(--color-bg-section-dark);
     border-radius: 9999px;
     width: 46px;
     height: 46px;
     padding: 0;
     margin-left: auto;
-    border: 0.5px solid var(--color-gold);
+    border: 0.5px solid ivory;
     justify-content: center;
   }
   #navbar .nav-links,
@@ -139,10 +140,10 @@ body {
     padding: 0.875rem 1.5rem;
   }
   #navbar.scrolled .nav-inner {
-    background: var(--color-bg-dark);
+    background: var(--color-bg-section-dark);
     color: var(--color-text-light);
     border-radius: 9999px;
-    border: 0.5px solid var(--color-gold);
+    border: 0.5px solid ivory;
     padding: 0.35rem 0.4rem 0.35rem 1.25rem;
     gap: 0.75rem;
     justify-content: center;
@@ -255,7 +256,7 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: var(--color-bg-dark);
+  background: var(--color-bg-section-dark);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -323,6 +324,14 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   text-align: center;
   padding: 2rem 1.5rem;
 }
+#hero-content h1 {
+  line-height: .75;
+}
+@media (min-width: 640px) {
+  #hero-content h1 {
+    line-height: 1.1;
+  }
+}
 
 #hero-venue {
   display: block;
@@ -339,7 +348,7 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 }
 @media (min-width: 640px) {
   #hero-venue {
-    width: 80%;
+    width: 70%;
   }
 }
 
@@ -360,14 +369,14 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 #illust-chair { width: 66%; }
 #illust-glass { width: 66%; }
 @media (min-width: 640px) {
-  #illust-chair { width: 33%; }
-  #illust-glass { width: 20%; }
+  #illust-chair { width: 20%; }
+  #illust-glass { width: 33%; }
 }
 
 /* ── Pinterest card ────────────────────────────────────────── */
 .pinterest-card {
   background: var(--color-white);
-  border-top: 3px solid var(--color-gold);
+  border-top: 3px solid var(--color-terracota);
   border-radius: 0 0 12px 12px;
   padding: 20px 22px;
   text-align: center;
@@ -376,7 +385,7 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 .pinterest-card-icon {
   display: block;
   font-size: 24px;
-  color: var(--color-gold);
+  color: var(--color-terracota);
   margin-bottom: 10px;
 }
 .pinterest-card-title {
@@ -418,10 +427,9 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   color: var(--color-text-dark);
 }
 .section-dark {
-  background-color: var(--color-bg-dark);
+  background-color: var(--color-bg-section-dark);
   color: var(--color-text-light);
 }
-
 /* ── Countdown ─────────────────────────────────────────────── */
 .countdown-box {
   background: var(--color-bg-light-a08);
@@ -443,7 +451,7 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   font-family: var(--font-body);
   font-style: italic;
   font-size: 0.85rem;
-  color: var(--color-text-muted-dark);
+  color: var(--color-text-light);
   margin-top: 0.4rem;
   display: block;
 }
@@ -543,7 +551,7 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   top: 0;
   bottom: 0;
   width: 1.5px;
-  background: linear-gradient(to bottom, var(--color-gold), var(--color-terracota));
+  background: linear-gradient(to bottom, #a0a060, #b80a59);
   transform: translateX(-50%);
 }
 
@@ -726,9 +734,9 @@ details.faq-item .faq-answer {
 
 /* ── Restaurant links ──────────────────────────────────────── */
 .resto-link {
-  color: var(--color-gold-bright);
+  color: var(--color-terracota);
   text-decoration: none;
-  border-bottom: 1px solid var(--color-gold-a30);
+  border-bottom: 1px solid var(--color-terracota-a30);
   transition: border-color 0.2s;
 }
 .resto-link:hover { border-color: var(--color-gold); }
@@ -741,13 +749,11 @@ details.faq-item .faq-answer {
   text-transform: uppercase;
 }
 .section-title-light {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 250;
   color: var(--color-text-dark);
 }
 .section-title-dark {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 250;
   color: var(--color-text-light);
 }
 
