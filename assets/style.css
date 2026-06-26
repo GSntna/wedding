@@ -8,8 +8,6 @@
   --color-terracota-soft:   #000000;  /* Negro — labels countdown, estado copiado */
   --color-terracota-dark:   #8e0845;  /* Acento oscuro — hover del btn-light */
   --color-gold:             #8B6914;  /* Oro — íconos, borde navbar, bullet/línea timeline */
-  --color-gold-bright:      #C99A2E;  /* Oro brillante — texto de enlaces de restaurantes */
-
   /* ── Text colors ─── */
   --color-text-dark:        #2c2420;  /* Texto principal sobre fondos claros */
   --color-text-light:       #fcf2e6;  /* Texto principal sobre fondos oscuros */
@@ -17,24 +15,20 @@
   --color-text-muted-dark:  #000000;  /* Negro — texto secundario sobre fondos oscuros */
 
   /* ── Neutral colors ─── */
-  --color-white:                #ffffff;  /* Marco del polaroid, texto del hotel-badge */
-  --color-polaroid-placeholder: #d1c9c4;  /* Relleno cuando falta la imagen del polaroid */
+  --color-white:                #ffffff;
 
   /* ── Terracota with transparency ─── */
   --color-terracota-a08:  rgba(184, 10, 89, 0.08);  /* Fondo hover copy-btn (secciones light) */
   --color-terracota-a20:  rgba(184, 10, 89, 0.20);  /* Borde event-card (secciones light) */
-  --color-terracota-a25:  rgba(184, 10, 89, 0.25);  /* Borde hotel-card, borde FAQ item */
   --color-terracota-a30:  rgba(184, 10, 89, 0.30);  /* Borde copy-btn (light), subrayado resto-link */
   --color-terracota-a35:  black;  /* Borde .divider (separador sección light) */
 
   /* ── Bg-light (cream) with transparency ─── */
   --color-bg-light-a08:  rgba(252, 242, 230, 0.08);  /* Fondo countdown-box */
   --color-bg-light-a10:  rgba(252, 242, 230, 0.10);  /* Fondo hover btn-dark, copy-btn hover (dark) */
-  --color-bg-light-a15:  rgba(252, 242, 230, 0.15);  /* Borde event-card (secciones dark) */
   --color-bg-light-a18:  rgba(252, 242, 230, 0.18);  /* Borde countdown-box */
   --color-bg-light-a20:  black;  /* Borde .divider-dark (separador sección dark) */
   --color-bg-light-a35:  rgba(252, 242, 230, 0.35);  /* Borde copy-btn (secciones dark) */
-  --color-bg-light-a60:  rgba(252, 242, 230, 0.60);  /* Borde btn-dark */
 
   /* ── Bg-dark with transparency ─── */
   --color-bg-dark-a06:  rgba(44, 36, 32, 0.06);  /* Fondo hover timeline-btn */
@@ -43,10 +37,6 @@
 
   /* ── Gold with transparency ─── */
   --color-gold-a30:  rgba(139, 105, 20, 0.30);  /* Subrayado del enlace de restaurantes */
-
-  /* ── Shadows ─── */
-  --shadow-polaroid:       2px 4px 14px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.1);  /* Polaroid en reposo */
-  --shadow-polaroid-hover: 4px 8px 24px rgba(0,0,0,0.22);                              /* Polaroid al hacer hover */
 
   /* ── Typographies  ─── */
   --font-display: 'Cardo', serif;
@@ -456,45 +446,6 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   display: block;
 }
 
-/* ── Polaroid ──────────────────────────────────────────────── */
-.polaroid {
-  background: var(--color-white);
-  padding: 12px 12px 40px;
-  box-shadow: var(--shadow-polaroid);
-  display: inline-block;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
-}
-.polaroid:hover {
-  transform: rotate(0deg) scale(1.03) !important;
-  box-shadow: var(--shadow-polaroid-hover);
-}
-.polaroid img, .polaroid .polaroid-placeholder {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-.polaroid .polaroid-placeholder {
-  background: var(--color-polaroid-placeholder);
-}
-.polaroid .polaroid-caption {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: 0.78rem;
-  color: var(--color-text-muted-light);
-  text-align: center;
-  margin-top: 0.5rem;
-  line-height: 1.3;
-}
-
-.polaroid-r1  { transform: rotate(-3deg); }
-.polaroid-r2  { transform: rotate(1.5deg); }
-.polaroid-r3  { transform: rotate(-1.5deg); }
-.polaroid-r4  { transform: rotate(2.5deg); }
-.polaroid-r5  { transform: rotate(-2deg); }
-.polaroid-r6  { transform: rotate(1deg); }
-
 /* ── Buttons ───────────────────────────────────────────────── */
 .btn-light {
   display: inline-block;
@@ -511,33 +462,6 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   transition: background 0.2s;
 }
 .btn-light:hover { background: var(--color-terracota-dark); }
-
-.btn-dark {
-  display: inline-block;
-  background: transparent;
-  color: var(--color-text-light);
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  padding: 0.65rem 1.4rem;
-  border-radius: 5px;
-  border: 1px solid var(--color-bg-light-a60);
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.btn-dark:hover { background: var(--color-bg-light-a10); }
-
-/* ── Event detail card ─────────────────────────────────────── */
-.event-card {
-  border: 1px solid var(--color-bg-light-a15);
-  border-radius: 0.75rem;
-  padding: 2rem 1.5rem;
-  text-align: center;
-}
-.section-light .event-card {
-  border-color: var(--color-terracota-a20);
-}
 
 /* ── Event Timeline (zigzag) ──────────────────────────────── */
 .event-timeline {
@@ -696,52 +620,6 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   border-color: var(--color-terracota);
 }
 
-.copy-btn-inline {
-  background: none;
-  border: none;
-  padding: 0;
-  line-height: 1;
-  color: inherit;
-  cursor: pointer;
-}
-
-/* ── FAQ accordion ─────────────────────────────────────────── */
-details.faq-item {
-  border-bottom: 1px solid var(--color-terracota-a25);
-}
-details.faq-item summary {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  color: var(--color-text-dark);
-  padding: 1rem 0;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-details.faq-item summary::-webkit-details-marker { display: none; }
-details.faq-item summary::after {
-  content: '+';
-  font-size: 1.3rem;
-  color: var(--color-terracota);
-  flex-shrink: 0;
-  transition: transform 0.2s;
-}
-details.faq-item[open] summary::after { content: '−'; }
-details.faq-item .faq-answer {
-  font-style: italic;
-  color: var(--color-text-muted-light);
-  padding-bottom: 1rem;
-  line-height: 1.7;
-}
-.pending-text {
-  font-style: italic;
-  color: var(--color-text-muted-light);
-  opacity: 0.6;
-}
-
 /* ── Restaurant links ──────────────────────────────────────── */
 .resto-link {
   color: var(--color-terracota);
@@ -765,24 +643,6 @@ details.faq-item .faq-answer {
 .section-title-dark {
   font-weight: 250;
   color: var(--color-text-light);
-}
-
-/* ── Hotel card ────────────────────────────────────────────── */
-.hotel-card {
-  border: 1px solid var(--color-terracota-a25);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-}
-.hotel-badge {
-  display: inline-block;
-  background: var(--color-gold);
-  color: var(--color-white);
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  padding: 0.2rem 0.6rem;
-  border-radius: 3px;
-  text-transform: uppercase;
 }
 
 /* ── Illustration wrapper ──────────────────────────────────── */

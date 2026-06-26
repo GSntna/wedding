@@ -115,7 +115,7 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 /* ── Copy to clipboard ─────────────────────────────────────── */
-document.querySelectorAll('.copy-btn, .copy-btn-inline').forEach(btn => {
+document.querySelectorAll('.copy-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const value = btn.dataset.value || '';
     if (!value || value.includes('PENDIENTE')) return;
@@ -139,7 +139,6 @@ const bankDetails = document.getElementById('bank-details');
 if (bankToggle && bankDetails) {
   bankToggle.addEventListener('click', () => {
     const open = bankDetails.classList.toggle('open');
-    const isEs = html.lang === 'es';
     bankToggle.querySelector('.toggle-label-es').textContent =
       open ? 'Ocultar detalles' : 'Detalles bancarios';
     bankToggle.querySelector('.toggle-label-en').textContent =
@@ -147,15 +146,6 @@ if (bankToggle && bankDetails) {
     bankToggle.querySelector('.toggle-icon').textContent = open ? '−' : '+';
   });
 }
-
-/* ── Polaroid image fallback ───────────────────────────────── */
-document.querySelectorAll('.polaroid img').forEach(img => {
-  img.addEventListener('error', function () {
-    const placeholder = document.createElement('div');
-    placeholder.className = 'polaroid-placeholder';
-    this.replaceWith(placeholder);
-  });
-});
 
 /* ── Illustration fallback ─────────────────────────────────── */
 document.querySelectorAll('.illustration-img').forEach(img => {
