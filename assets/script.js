@@ -115,7 +115,7 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 /* ── Copy to clipboard ─────────────────────────────────────── */
-document.querySelectorAll('.copy-btn').forEach(btn => {
+document.querySelectorAll('.copy-btn, .copy-btn-inline').forEach(btn => {
   btn.addEventListener('click', () => {
     const value = btn.dataset.value || '';
     if (!value || value.includes('PENDIENTE')) return;

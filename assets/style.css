@@ -683,16 +683,26 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 .copy-btn.copied { color: var(--color-terracota-soft); border-color: var(--color-terracota-soft); }
 
 .section-light .copy-btn {
-  border-color: var(--color-terracota-a30);
-  color: var(--color-text-muted-light);
+  border-color: var(--color-terracota);
+  color: var(--color-terracota);
+  background: var(--color-terracota-a08);
 }
 .section-light .copy-btn:hover {
-  background: var(--color-terracota-a08);
+  background: var(--color-terracota-a20);
   color: var(--color-terracota);
 }
 .section-light .copy-btn.copied {
   color: var(--color-terracota);
   border-color: var(--color-terracota);
+}
+
+.copy-btn-inline {
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  color: inherit;
+  cursor: pointer;
 }
 
 /* ── FAQ accordion ─────────────────────────────────────────── */
