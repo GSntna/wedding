@@ -45,16 +45,6 @@
 }
 
 /* ── Intro (mobile only) ───────────────────────────────────── */
-#intro-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  background: var(--color-bg-light);
-  transition: opacity 0.8s ease;
-  pointer-events: none;
-}
-#intro-bg.fade-out { opacity: 0; }
-
 #intro-logo {
   position: fixed;
   z-index: 9999;
@@ -64,14 +54,40 @@
   width: 60vw;
   max-width: 320px;
   pointer-events: none;
-  transition: all 0.85s cubic-bezier(.4,0,.2,1);
+  transition: all 1.6s cubic-bezier(.4,0,.2,1);
 }
 #intro-logo.in-navbar {
   z-index: 51;
 }
 @media (min-width: 640px) {
-  #intro-bg { display: none; }
   #intro-logo { display: none; }
+}
+
+/* ── Mobile intro: navbar + hero hidden until animation completes ── */
+@media (max-width: 639px) {
+  #navbar {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  #navbar.navbar-visible {
+    opacity: 1;
+  }
+  #hero-venue,
+  #hero-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  #hero-venue.hero-visible,
+  #hero-content.hero-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  body.intro-active section:not(#hero),
+  body.intro-active footer {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
 }
 
 /* ── Base ──────────────────────────────────────────────────── */

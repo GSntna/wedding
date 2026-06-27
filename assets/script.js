@@ -1,15 +1,15 @@
 /* ── Intro animation (mobile only) ────────────────────────── */
 (function () {
-  const bg = document.getElementById('intro-bg');
   const logo = document.getElementById('intro-logo');
-
-  if (!bg || !logo) return;
+  if (!logo) return;
 
   if (window.innerWidth >= 640) {
-    bg.remove();
     logo.remove();
     return;
   }
+
+  window.scrollTo(0, 0);
+  document.body.classList.add('intro-active');
 
   const navbarH = 52;
   const logoFinalH = 66;
@@ -22,12 +22,18 @@
     logo.style.maxWidth = 'none';
     logo.style.transform = 'translate(-50%, 0)';
 
-    bg.classList.add('fade-out');
-
     setTimeout(() => {
-      bg.remove();
       logo.classList.add('in-navbar');
-    }, 900);
+      const navbar = document.getElementById('navbar');
+      const venue = document.getElementById('hero-venue');
+      const content = document.getElementById('hero-content');
+      if (navbar) navbar.classList.add('navbar-visible');
+      if (venue) venue.classList.add('hero-visible');
+      setTimeout(() => {
+        if (content) content.classList.add('hero-visible');
+        document.body.classList.remove('intro-active');
+      }, 450);
+    }, 1700);
   }, 1000);
 })();
 
@@ -198,5 +204,6 @@ const illustrationObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 document.querySelectorAll('.section-illustration, #hero-venue').forEach(img => {
+  if (img.id === 'hero-venue' && window.innerWidth < 640) return;
   illustrationObserver.observe(img);
 });
