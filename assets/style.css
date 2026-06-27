@@ -44,6 +44,36 @@
   --font-script:  'Luxurious Script', cursive;
 }
 
+/* ── Intro (mobile only) ───────────────────────────────────── */
+#intro-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: var(--color-bg-light);
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+#intro-bg.fade-out { opacity: 0; }
+
+#intro-logo {
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  max-width: 320px;
+  pointer-events: none;
+  transition: all 0.85s cubic-bezier(.4,0,.2,1);
+}
+#intro-logo.in-navbar {
+  z-index: 51;
+}
+@media (min-width: 640px) {
+  #intro-bg { display: none; }
+  #intro-logo { display: none; }
+}
+
 /* ── Base ──────────────────────────────────────────────────── */
 html { scroll-behavior: smooth; }
 
@@ -81,40 +111,44 @@ body {
   top: 0; left: 0; right: 0;
   z-index: 50;
   transition: all 0.35s ease;
-  padding: 0.75rem 1.5rem;
+  padding: 0;
 }
 
 #navbar .nav-inner {
   display: flex;
   align-items: center;
   transition: all 0.35s ease;
+  position: relative;
 }
 
-/* ── Mobile: always dark circle with hamburger ─────────────── */
+/* ── Mobile navbar: full-width bar ─────────────────────────── */
 @media (max-width: 639px) {
-  #navbar .nav-inner {
+  #navbar {
     background: var(--color-bg-section-dark);
-    border-radius: 9999px;
-    width: 46px;
-    height: 46px;
-    padding: 0;
-    margin-left: auto;
-    border: 0.5px solid ivory;
+    height: 52px;
+    overflow: visible;
+  }
+  #navbar .nav-inner {
+    height: 100%;
+    padding: 0 1rem;
     justify-content: center;
   }
   #navbar .nav-links,
-  #navbar .lang-toggle,
-  #navbar .nav-inner > div {
+  #navbar .lang-toggle {
     display: none !important;
   }
   #navbar #hamburger-btn {
     display: flex !important;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
     margin: 0;
     color: var(--color-text-light);
   }
 }
 
-/* ── Desktop transparent: fully invisible ──────────────────── */
+/* ── Desktop transparent: hidden ───────────────────────────── */
 @media (min-width: 640px) {
   #navbar.transparent {
     opacity: 0;
@@ -140,9 +174,6 @@ body {
     width: auto;
     height: auto;
     margin: 0;
-  }
-  #navbar.scrolled .nav-inner > div {
-    display: none !important;
   }
   #navbar.scrolled .nav-links {
     display: flex !important;
@@ -308,6 +339,9 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   background-color: var(--color-bg-light);
   overflow: hidden;
   padding-top: 6rem;
+}
+@media (max-width: 639px) {
+  #hero { padding-top: 4.5rem; }
 }
 
 #hero-content {
@@ -505,6 +539,10 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
   width: calc(50% - 24px);
   text-align: left;
   margin-left: calc(50% + 24px);
+}
+
+.timeline-bullet-second {
+  top: 72px;
 }
 
 .timeline-time {

@@ -51,21 +51,28 @@
 <body>
 
 <!-- ════════════════════════════════════════════════════════════
+     INTRO (background + logo are separate so they animate independently)
+════════════════════════════════════════════════════════════ -->
+<div id="intro-bg"></div>
+<img id="intro-logo" src="assets/logo.svg" alt="Karla & Gus" />
+
+<!-- ════════════════════════════════════════════════════════════
      NAVBAR
 ════════════════════════════════════════════════════════════ -->
 <nav id="navbar" class="transparent">
   <div class="nav-inner">
-    <!-- Desktop menu links -->
-    <ul class="nav-links hidden sm:flex items-center gap-5 list-none m-0 p-0">
+    <!-- Desktop left links -->
+    <ul class="nav-links nav-links-left hidden sm:flex items-center gap-5 list-none m-0 p-0">
       <li><a href="#evento" class="nav-link lang-es">Evento</a><a href="#evento" class="nav-link lang-en">Event</a></li>
       <li><a href="#viaje" class="nav-link lang-es">Viaje</a><a href="#viaje" class="nav-link lang-en">Travel</a></li>
+    </ul>
+    <!-- Desktop right links -->
+    <ul class="nav-links nav-links-right hidden sm:flex items-center gap-5 list-none m-0 p-0">
       <li><a href="#gastronomia" class="nav-link lang-es">Gastronomía</a><a href="#gastronomia" class="nav-link lang-en">Food</a></li>
       <li><a href="#regalos" class="nav-link lang-es">Regalos</a><a href="#regalos" class="nav-link lang-en">Gifts</a></li>
     </ul>
-    <!-- Spacer pushes right-side items to the edge on mobile -->
-    <div class="flex-1"></div>
-    <!-- Language toggle (shared between desktop + mobile, cloned into overlay via JS) -->
-    <button class="lang-toggle" aria-label="Toggle language">
+    <!-- Language toggle -->
+    <button class="lang-toggle hidden sm:inline-flex" aria-label="Toggle language">
       <span class="lang-indicator"></span>
       <span class="lang-opt" data-lang="es">ES</span>
       <span class="lang-opt" data-lang="en">EN</span>
@@ -211,10 +218,14 @@
       <!-- Recepción — right -->
       <div id="recepcion" class="timeline-item timeline-right">
         <div class="timeline-bullet" style="background:#b80a59;" aria-hidden="true"></div>
+        <div class="timeline-bullet timeline-bullet-second" style="background:#b80a59;" aria-hidden="true"></div>
         <div class="timeline-content">
           <p class="timeline-time" style="color:#b80a59;">5:00 PM</p>
           <p class="timeline-label lang-es" style="color:#b80a59;">Recepción</p>
           <p class="timeline-label lang-en" style="color:#b80a59;">Reception</p>
+          <p class="timeline-time mt-4" style="color:#b80a59;">6:15 PM</p>
+          <p class="timeline-label lang-es" style="color:#b80a59;">Comida y fiesta</p>
+          <p class="timeline-label lang-en" style="color:#b80a59;">Dinner &amp; Party</p>
           <p class="timeline-venue">Hacienda de Chiapa</p>
           <p class="timeline-address" style="color:black;">28530 Chiapa, Colima</p>
           <a href="https://maps.app.goo.gl/iGm8Wd3z4FKvBzHbA" target="_blank" rel="noopener" class="timeline-btn lang-es">

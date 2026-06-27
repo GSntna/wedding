@@ -1,3 +1,36 @@
+/* ── Intro animation (mobile only) ────────────────────────── */
+(function () {
+  const bg = document.getElementById('intro-bg');
+  const logo = document.getElementById('intro-logo');
+
+  if (!bg || !logo) return;
+
+  if (window.innerWidth >= 640) {
+    bg.remove();
+    logo.remove();
+    return;
+  }
+
+  const navbarH = 52;
+  const logoFinalH = 66;
+  const logoFinalTop = navbarH * 0.5 - logoFinalH * 0.3;
+
+  setTimeout(() => {
+    logo.style.top = logoFinalTop + 'px';
+    logo.style.left = '50%';
+    logo.style.width = logoFinalH * (185 / 142) + 'px';
+    logo.style.maxWidth = 'none';
+    logo.style.transform = 'translate(-50%, 0)';
+
+    bg.classList.add('fade-out');
+
+    setTimeout(() => {
+      bg.remove();
+      logo.classList.add('in-navbar');
+    }, 900);
+  }, 1000);
+})();
+
 /* ── Language toggle (sliding pill) ───────────────────────── */
 const html = document.documentElement;
 
