@@ -514,6 +514,28 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 .btn-light:hover { background: var(--color-terracota-dark); }
 
 /* ── Event Timeline (zigzag) ──────────────────────────────── */
+.timeline-block {
+  position: relative;
+}
+
+.timeline-note {
+  text-align: center;
+  margin: 0 0 2rem;
+  color: var(--color-text-dark);
+}
+
+@media (min-width: 640px) {
+  .timeline-note {
+    position: absolute;
+    top: 142px;
+    left: calc(50% + 24px);
+    width: calc(50% - 24px);
+    text-align: left;
+    margin: 0;
+    color: var(--color-text-muted-light);
+  }
+}
+
 .event-timeline {
   position: relative;
   padding: 8px 0 4px;
@@ -558,7 +580,7 @@ html[lang="en"] .lang-opt[data-lang="es"] { opacity: 0.45; font-weight: 400; }
 }
 
 .timeline-bullet-second {
-  top: 72px;
+  top: 168px;
 }
 
 .timeline-time {
